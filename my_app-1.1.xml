@@ -21,7 +21,7 @@
         <column name="currency_code" value="USD"/>
         <column name="continent_code" value="NA"/>
       </insert>
-      <comment>Insert rows in table</comment>
+      <comment>Insert: rows in table</comment>
       <insert tableName="countries">
         <column name="iso" value="DR"/>
         <column name="iso3" value="DOM"/>
@@ -31,7 +31,7 @@
         <column name="currency_code" value="DOM"/>
         <column name="continent_code" value="SA"/>
       </insert>
-      <comment>Insert rows in table</comment>
+      <comment>Insert: rows in table</comment>
       <insert tableName="countries">
         <column name="iso" value="DR"/>
         <column name="iso3" value="DOM"/>
@@ -41,7 +41,7 @@
         <column name="currency_code" value="RDP"/>
         <column name="continent_code" value="SA"/>
       </insert>
-      <comment>Insert rows in table</comment>
+      <comment>Insert: rows in table</comment>
       <insert tableName="countries">
         <column name="iso" value="PR"/>
         <column name="iso3" value="PUR"/>
