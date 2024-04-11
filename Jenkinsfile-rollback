@@ -1,6 +1,8 @@
 pipeline {
   agent {
-    any { image 'liquibase/liquibase:latest-alpine' }
+    docker {
+        label 'docker' 
+        image 'liquibase/liquibase:latest-alpine' }
   }
   environment {
     MARIADB_CREDS=credentials('mariadb-credentials')
