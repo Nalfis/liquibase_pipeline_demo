@@ -9,12 +9,14 @@ xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
                         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <changeSet author="Nalfis Tobar" id="addColumn-bad_col">
+      <comment>Insert: column in table</comment>
       <addColumn tableName="countries">
         <column name="bad_col" type="VARCHAR(3)">
           <constraints nullable="false"/>
         </column>
       </addColumn>
       <rollback>
+      <comment>Rollback: drop column in table</comment>
         <dropColumn catalogName="liquibase1"
 	                   columnName="bad_col"
 	                   schemaName="liquibase1"

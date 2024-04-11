@@ -11,7 +11,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="Nalfis Tobar" id="sql-example">
-      <comment>insert queries</comment>
+      <comment>Insert: Rows</comment>
       <insert tableName="countries">
         <column name="iso" value="US"/>
         <column name="iso3" value="USA"/>
@@ -21,7 +21,7 @@
         <column name="currency_code" value="USD"/>
         <column name="continent_code" value="NA"/>
       </insert>
-      <comment>insert queries</comment>
+      <comment>Insert rows in table</comment>
       <insert tableName="countries">
         <column name="iso" value="DR"/>
         <column name="iso3" value="DOM"/>
@@ -31,7 +31,28 @@
         <column name="currency_code" value="DOM"/>
         <column name="continent_code" value="SA"/>
       </insert>
+      <comment>Insert rows in table</comment>
+      <insert tableName="countries">
+        <column name="iso" value="DR"/>
+        <column name="iso3" value="DOM"/>
+        <column name="iso_numeric" value="02"/>
+        <column name="country_name" value="Dominican Republic"/>
+        <column name="capital" value="Santo Domingo"/>
+        <column name="currency_code" value="RDP"/>
+        <column name="continent_code" value="SA"/>
+      </insert>
+      <comment>Insert rows in table</comment>
+      <insert tableName="countries">
+        <column name="iso" value="PR"/>
+        <column name="iso3" value="PUR"/>
+        <column name="iso_numeric" value="03"/>
+        <column name="country_name" value="Puerto Rico"/>
+        <column name="capital" value="San Juan"/>
+        <column name="currency_code" value="USD"/>
+        <column name="continent_code" value="SA"/>
+      </insert>
       <rollback>
+        <comment>Rollback: delete rows where continent_code equals SA </comment>
         <delete catalogName="liquibase1"
                 schemaName="liquibase1"
                 tableName="countries">
