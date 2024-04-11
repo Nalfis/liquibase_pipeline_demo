@@ -21,6 +21,16 @@
         <column name="currency_code" value="USD"/>
         <column name="continent_code" value="NA"/>
       </insert>
+      <comment>insert queries</comment>
+      <insert tableName="countries">
+        <column name="iso" value="DR"/>
+        <column name="iso3" value="DOM"/>
+        <column name="iso_numeric" value="02"/>
+        <column name="country_name" value="Dominican Republic"/>
+        <column name="capital" value="Santo Domingo"/>
+        <column name="currency_code" value="DOM"/>
+        <column name="continent_code" value="SA"/>
+      </insert>
       <rollback></rollback>
     </changeSet>
 </databaseChangeLog>
