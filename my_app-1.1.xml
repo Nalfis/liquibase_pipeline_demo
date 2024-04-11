@@ -20,8 +20,7 @@
         <column name="capital" value="Washington DC"/>
         <column name="currency_code" value="USD"/>
         <column name="continent_code" value="NA"/>
-        
       </insert>
-
+      <rollback></rollback>
     </changeSet>
 </databaseChangeLog>

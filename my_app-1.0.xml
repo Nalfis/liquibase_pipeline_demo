@@ -38,7 +38,7 @@
             </column>
       </createTable>
       <rollback>
-            <dropTable tableName="countries">
+            <dropTable tableName="countries"/>
       </rollback>
     </changeSet>
 </databaseChangeLog>
