@@ -37,5 +37,8 @@
                 <constraints nullable="false"/>
             </column>
       </createTable>
+      <rollback>
+            <dropTable tableName="countries">
+      </rollback>
     </changeSet>
 </databaseChangeLog>
