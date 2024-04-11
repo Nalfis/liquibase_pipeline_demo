@@ -32,6 +32,11 @@
         <column name="continent_code" value="SA"/>
       </insert>
       <rollback>
+        <delete catalogName="liquibase1"
+                schemaName="liquibase1"
+                tableName="countries">
+            <where>continent_code="SA"</where>
+        </delete>
       </rollback>
     </changeSet>
 </databaseChangeLog>
