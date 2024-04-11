@@ -1,5 +1,13 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog>
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <changeSet author="Nalfis Tobar" id="addColumn-bad_col">
       <addColumn tableName="countries">
         <column name="bad_col" type="VARCHAR(3)">
@@ -7,10 +15,10 @@
         </column>
       </addColumn>
       <rollback>
-        <dropColumn catalogName="cat"
+        <dropColumn catalogName="liquibase1"
 	                   columnName="bad_col"
 	                   schemaName="liquibase1"
-	                   tableName="">
+	                   tableName="countries">
 	        <column name="bad_col"/>
         </dropColumn>
       </rollback>
