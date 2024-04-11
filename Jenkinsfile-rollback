@@ -1,0 +1,31 @@
+pipeline {
+  agent {
+    docker { image 'liquibase/liquibase:latest-alpine' }
+  }
+  environment {
+    MARIADB_CREDS=credentials('mariadb-credentials')
+  }
+  stages {
+    stage('Status --verbose') {
+      steps {
+        echo 'MARIADB_HOST: "${env.$MARIADB_HOST}"'
+        sh 'liquibase status --url="jdbc:mariadb://172.28.144.1:3306/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW' 
+      }
+    }
+    stage('Rollback') {
+      steps {
+        sh 'liquibase rollback-count --count=2 --url="jdbc:mariadb://172.28.144.1:3306/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+      }
+    }
+    stage('History') {
+      steps {
+        sh 'liquibase history --url="jdbc:mariadb://172.28.144.1:3306/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}
