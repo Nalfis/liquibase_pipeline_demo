@@ -9,7 +9,7 @@ pipeline {
     stage('Status --verbose') {
       steps {
         echo 'MARIADB_HOST: "${env.$MARIADB_HOST}"'
-        sh 'liquibase status --url="jdbc:mariadb://172.28.144.1:3306/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW' 
+        sh 'liquibase status --verbose --url="jdbc:mariadb://172.28.144.1:3306/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW' 
       }
     }
     stage('Rollback') {
