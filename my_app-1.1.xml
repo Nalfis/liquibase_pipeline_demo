@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog 
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" 
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext 
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+                        http://www.liquibase.org/xml/ns/pro 
+                        http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
+                        http://www.liquibase.org/xml/ns/dbchangelog 
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="Nalfis Tobar" id="sql-example">
+      <comment>insert queries</comment>
+      <insert tableName="countries">
+        <column name="iso" value="US"/>
+        <column name="iso3" value="USA"/>
+        <column name="iso_numeric" value="01"/>
+        <column name="country_name" value="United States of America"/>
+        <column name="capital" value="Washington DC"/>
+        <column name="currency_code" value="USD"/>
+        <column name="continent_code" value="NA"/>
+        
+      </insert>
+
+    </changeSet>
+</databaseChangeLog>
