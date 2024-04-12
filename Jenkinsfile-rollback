@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Rollback') {
       steps {
-        sh 'liquibase rollback-count --count=2 --url="jdbc:mariadb://${MARIADB_HOST}:${MARIADB_PORT}/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+        sh 'liquibase rollback-count --count=${ROLLBACK_COUNT} --url="jdbc:mariadb://${MARIADB_HOST}:${MARIADB_PORT}/liquibase1" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
       }
     }
     stage('History') {
