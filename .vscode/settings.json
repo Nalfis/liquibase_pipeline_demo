@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "172.17.0.2",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "mariadbtest",
+            "database": "liquibase1",
+            "username": "root"
+        }
+    ]
+}
