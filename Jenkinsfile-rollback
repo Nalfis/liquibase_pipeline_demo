@@ -9,7 +9,6 @@ pipeline {
   stages {
     stage('Status --verbose') {
       steps {
-        echo 'MARIADB_HOST: "${env.$MARIADB_HOST}"'
         sh 'liquibase status --verbose --url="jdbc:mariadb://${MARIADB_HOST}:${MARIADB_PORT}/${DB_NAME}" --changeLogFile=my_app_wrapper_jenkins.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW' 
       }
     }
