@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker { 
-      label 'docker_cloud'
+      label 'liquibase_agent'
       image DOCKER_IMAGE }
   }
   environment {
