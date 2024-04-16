@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { image '${LIQUIBASE_IMAGE}' }
+    docker { image "${LIQUIBASE_IMAGE}" }
   }
   environment {
     MARIADB_CREDS=credentials('mariadb-credentials')
